@@ -122,6 +122,77 @@ nav ul li a {
     padding: 10px;
     background-color: #fff;
 }
+.reviews {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.review-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-item:hover {
+    transform: scale(1.05);
+}
+
+.review-item p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.review-item .review-author {
+    text-align: right;
+    font-size: 1em;
+    font-weight: bold;
+    color: #777;
+    margin-top: 15px;
+}
+
+.review-item p::before,
+.review-item p::after {
+    content: '"';
+    font-size: 1.5em;
+    color: #ccc;
+    vertical-align: top;
+}
+
+.review-item p::before {
+    margin-right: 5px;
+}
+
+.review-item p::after {
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
     background-image: url('images/fut1.jpg');
