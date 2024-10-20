@@ -1,0 +1,38 @@
+header {
+    background-color: #ff69b4;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;  /* Это позволит элементам переноситься на следующую строку */
+    gap: 20px;        /* Добавляет промежутки между изображениями */
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 40%;
+    height: auto;      /* Сохраняет пропорции изображений */
+    border: 2px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+}
