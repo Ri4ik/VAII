@@ -1,23 +1,95 @@
 
 header {
-    background-image: url('images/logo.jpg'); /* Укажите путь к вашей картинке */
-    background-size: auto 100%; /* Изображение растягивается по высоте заголовка */
-    background-position: center; /* Центрирует изображение по горизонтали */
-    background-repeat: no-repeat; /* Запрещает повторение изображения */
-    background-color: black; /* Дополняет ширину черным цветом */
-    height: 200px; /* Высота заголовка, меняйте по необходимости */
+    background-image: url('images/logo.jpg');
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 200px;
 
     text-align: center;
     padding: 20px;
     position: relative;
     font-family: 'Arial', sans-serif;
 }
+
+html, body {
+    height: 100%; /* Высота html и body равна 100% окна браузера */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Минимальная высота body равна высоте видимой области браузера */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
 h1 {
-    font-family: 'Arial', sans-serif; /* Шрифт заголовка */
-    font-size: 2em; /* Размер текста заголовка */
-    color: #ffffff; /* Белый цвет текста для контраста с черным фоном */
-    text-align: center; /* Выравнивает текст по центру */
-    padding: 20px 0; /* Добавляет отступы сверху и снизу */
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+.price-list {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-list h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #444;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4c4c;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+@media (max-width: 600px) {
+    .price-list {
+        padding: 15px;
+    }
+
+    .price-item h3, .price {
+        font-size: 1.3rem;
+    }
+
+    .price-list h2 {
+        font-size: 1.8rem;
+    }
 }
 nav ul {
     list-style-type: none;
@@ -52,9 +124,9 @@ nav ul li a {
 }
 
 footer {
-    background-image: url('images/fut1.jpg'); /* Укажите путь к вашей картинке */
+    background-image: url('images/fut1.jpg');
     background-size: cover; /* Сделает изображение полноэкранным */
-    background-position: center; /* Центрирует картинку по вертикали и горизонтали */
+    background-position: center;
     color: #fff;
     text-align: center;
     padding: 20px;
