@@ -1,15 +1,24 @@
 
 header {
-    background-image: url('images/hlav1.jpg'); /* Укажите путь к вашей картинке */
-    background-size: cover; /* Сделает изображение полноэкранным */
-    background-position: center; /* Центрирует картинку по вертикали и горизонтали */
-    color: #fff;
+    background-image: url('images/logo.jpg'); /* Укажите путь к вашей картинке */
+    background-size: auto 100%; /* Изображение растягивается по высоте заголовка */
+    background-position: center; /* Центрирует изображение по горизонтали */
+    background-repeat: no-repeat; /* Запрещает повторение изображения */
+    background-color: black; /* Дополняет ширину черным цветом */
+    height: 200px; /* Высота заголовка, меняйте по необходимости */
+
     text-align: center;
     padding: 20px;
     position: relative;
     font-family: 'Arial', sans-serif;
 }
-
+h1 {
+    font-family: 'Arial', sans-serif; /* Шрифт заголовка */
+    font-size: 2em; /* Размер текста заголовка */
+    color: #ffffff; /* Белый цвет текста для контраста с черным фоном */
+    text-align: center; /* Выравнивает текст по центру */
+    padding: 20px 0; /* Добавляет отступы сверху и снизу */
+}
 nav ul {
     list-style-type: none;
     padding: 0;
