@@ -1,6 +1,6 @@
 
 header {
-    background-image: url('images/logo.jpg');
+    background-image: url('../images/logo.jpg');
     background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -191,7 +191,33 @@ iframe {
     height: 300px;
     border: none;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
 
+input, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="text"], input[type="date"], input[type="time"] {
+    padding: 8px;
+    font-size: 16px;
+}
 
 
 
@@ -206,7 +232,7 @@ iframe {
 
 
 footer {
-    background-image: url('images/fut1.jpg');
+    background-image: url('../images/fut1.jpg');
     background-size: cover; /* Сделает изображение полноэкранным */
     background-position: center;
     color: #fff;
