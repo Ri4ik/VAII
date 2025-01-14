@@ -17,8 +17,9 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // SQL-запрос для получения всех услуг
-    $stmt = $pdo->query("SELECT id, name, price FROM services");
+    $stmt = $pdo->query("SELECT id, name, price, duration FROM services");
     $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //преобразует их в массив ассоциативных массивов, где каждый массив представляет одну строку из таблицы.
 
     // Возвращаем данные в формате JSON
     echo json_encode($services);

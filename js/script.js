@@ -1,7 +1,7 @@
 // js/script.js
 document.addEventListener("DOMContentLoaded", function () {
     // Загружаем список услуг через AJAX
-    fetch('/api/services') // Путь к API для получения услуг
+    fetch('../api/services.php') // Путь к API для получения услуг
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             data.forEach(service => {
                 const option = document.createElement('option');
                 option.value = service.id;
-                option.textContent = `${service.name} - ${service.price}€`;
+                option.textContent = `${service.name} - ${service.price}€ -  cca${service.duration} minut`;
                 serviceSelect.appendChild(option);
             });
         })
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Отправляем данные на сервер с помощью AJAX (fetch)
-        fetch('/api/reservations', {
+        fetch('../api/reservations.php', {
             method: 'POST',  // HTTP метод
             body: JSON.stringify(formData),  // Данные формы в формате JSON
             headers: {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Error:', error.message);
                 alert("Nastala chyba pri odosielaní formulára.");
             });
     });

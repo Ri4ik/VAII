@@ -1,6 +1,6 @@
 <?php
 // Обработка POST-запроса для добавления резервации
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['REQUEST_URI'] === '/api/reservations') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
     // Получаем данные из запроса
     $data = json_decode(file_get_contents("php://input"), true);
 

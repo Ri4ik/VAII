@@ -191,6 +191,7 @@ iframe {
     height: 300px;
     border: none;
 }
+/* Стили для формы */
 form {
     display: flex;
     flex-direction: column;
@@ -198,26 +199,60 @@ form {
     margin: 0 auto;
 }
 
-input, button {
-    margin-bottom: 10px;
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
+input, select, button {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none; /* Убираем стандартный вид выпадающего списка */
+    background-color: white;
+    cursor: pointer;
+}
+
+select:focus, input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Стили для кнопки */
 button {
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-input[type="text"], input[type="date"], input[type="time"] {
+button:active {
+    background-color: #3e8e41;
+}
+
+/* Стили для общего вида */
+input[type="text"], input[type="date"], input[type="time"], select {
     padding: 8px;
     font-size: 16px;
+    width: 100%;
 }
+
+
 
 
 
