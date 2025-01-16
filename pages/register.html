@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sk">
+<script type="module" src="../js/register.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrácia</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Registrácia</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="about.html">O nás</a></li>
+            <li><a href="examples.html">Príklady prác</a></li>
+            <li><a href="cennik.html">Cenník</a></li>
+            <li><a href="reserve.html">Rezervácia</a></li>
+            <li><a href="recenzii.html">Recenzií</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Registrujte sa</h2>
+        <form id="register-form" action="#">
+            <label for="username">Používateľské meno:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Heslo:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Potvrdenie hesla:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit">Registrovať</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Predlžovanie mihalníc. Všetky práva vyhradené.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrácia cez pozvánku</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+    <h1>Registrácia cez pozvánku</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="about.html">O nás</a></li>
+            <li><a href="examples.html">Príklady prác</a></li>
+            <li><a href="cennik.html">Cenník</a></li>
+            <li><a href="reserve.html">Rezervácia</a></li>
+            <li><a href="recenzii.html">Recenzií</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="invite-registration">
+        <h2>Vytvorte si účet</h2>
+        <form id="invite-form">
+            <input type="hidden" id="token" name="token">
+
+            <label for="name">Meno:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Heslo:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Registrovať sa</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Predlžovanie mihalníc. Všetky práva vyhradené.</p>
+</footer>
+<script type="module" src="../js/invite.js"></script>
+</body>
+</html>
