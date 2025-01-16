@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql:8.0
+    container_name: mysql-lash_reservation
+    ports:
+      - "3306:3306" # Пробрасываем порт MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: Nemenit.123 # Пароль root
+      MYSQL_DATABASE: lash_reservation # Имя базы данных
+      MYSQL_USER: root # Пользователь базы данных (дополнительно)
+      MYSQL_PASSWORD: Nemenit.123 # Пароль пользователя
+    volumes:
+      - db_data:/var/lib/mysql # Сохраняем данные в томе
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-app
+    ports:
+      - "8000:80" # Пробрасываем порт для веб-сервера
+    volumes:
+      - db_data:/var/lib/mysql
+    depends_on:
+      - database # Зависимость от контейнера базы данных
+
+volumes:
+  db_data: # Объявляем том для данных MySQL

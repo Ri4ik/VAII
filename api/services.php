@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 try {
     // Подключение к базе данных
-    $pdo = new PDO("mysql:host=localhost;dbname=lash_reservation", "root", "Nemenit.123");
+    $pdo = new PDO("mysql:host=database;dbname=lash_reservation;charset=utf8", "root", "Nemenit.123");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // SQL-запрос для получения всех услуг

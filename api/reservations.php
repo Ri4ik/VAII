@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
 
         // Подключение к базе данных
         try {
-            $pdo = new PDO("mysql:host=localhost;dbname=lash_reservation", "root", "Nemenit.123");
+            $pdo = new PDO("mysql:host=database;dbname=lash_reservation", "root", "Nemenit.123");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Проверяем, существует ли уже пользователь с таким email

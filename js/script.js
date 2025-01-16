@@ -1,7 +1,7 @@
 // js/script.js
 document.addEventListener("DOMContentLoaded", function () {
     // Загружаем список услуг через AJAX
-    fetch('../api/services.php') // Путь к API для получения услуг
+    fetch('http://localhost:8000/api/services.php') //('../api/services.php') // Путь к API для получения услуг
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);

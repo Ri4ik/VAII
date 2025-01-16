@@ -1,6 +1,6 @@
 <?php
 // Конфигурация подключения
-$host = 'localhost'; // Используй имя контейнера или сервиса из docker-compose.yml
+$host = 'database'; // Используй имя контейнера или сервиса из docker-compose.yml
 $db = 'lash_reservation'; // Название базы данных
 $user = 'root'; // Имя пользователя MySQL
 $pass = 'Nemenit.123'; // Пароль
