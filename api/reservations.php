@@ -14,12 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
 
         // Подключение к базе данных
         try {
-            $pdo = new PDO("mysql:host=database;dbname=lash_reservation", "root", "Nemenit.123");
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            require_once __DIR__ . '/Database.php';
+            $db = Database::getInstance()->getConnection();
+//            $config = include(__DIR__ . '/../config.php');
+//            $pdo = new PDO("mysql:host={$config['host']};dbname={$config['dbname']}", $config['user'], $config['password']);
+//            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Проверяем, существует ли уже пользователь с таким email
             $sql = "SELECT id FROM users WHERE email = :email";
-            $stmt = $pdo->prepare($sql);
+            $stmt = $db->prepare($sql);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
 
@@ -28,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
             if (!$user) {
                 // Если пользователя нет, создаем нового
                 $sql = "INSERT INTO users (name, email) VALUES (:name, :email)";
-                $stmt = $pdo->prepare($sql);
+                $stmt = $db->prepare($sql);
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
 
                 // Получаем id нового пользователя
-                $user_id = $pdo->lastInsertId();
+                $user_id = $db->lastInsertId();
             } else {
                 // Если пользователь есть, берем его id
                 $user_id = $user['id'];
@@ -43,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
             // SQL-запрос для добавления резервации
             $sql = "INSERT INTO reservations (user_id, service_id, reservation_date, reservation_time) 
                     VALUES (:user_id, :service, :date, :time)";
-            $stmt = $pdo->prepare($sql);
+            $stmt = $db->prepare($sql);
             $stmt->bindParam(':user_id', $user_id);
             $stmt->bindParam(':service', $service);
             $stmt->bindParam(':date', $date);

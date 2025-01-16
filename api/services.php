@@ -1,8 +1,9 @@
 <?php
 // api/services.php
 // Этот файл обрабатывает запросы на получение списка услуг.
-
-header('Content-Type: application/json');
+require_once __DIR__ . '/Database.php';
+header('Access-Control-Allow-Origin: *');
+//header('Content-Type: application/json');
 
 // Проверяем, что запрос был выполнен методом GET
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
@@ -13,11 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 try {
     // Подключение к базе данных
-    $pdo = new PDO("mysql:host=database;dbname=lash_reservation;charset=utf8", "root", "Nemenit.123");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    $db = Database::getInstance()->getConnection();
+    // Проверяем подключение
+//    if ($db) {
+//        echo json_encode(['success' => true, 'message' => 'Connection successful']);
+//    } else {
+//        throw new PDOException('Failed to establish database connection');
+//    }
     // SQL-запрос для получения всех услуг
-    $stmt = $pdo->query("SELECT id, name, price, duration FROM services");
+    $stmt = $db->query("SELECT id, name, price, duration FROM services");
     $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //преобразует их в массив ассоциативных массивов, где каждый массив представляет одну строку из таблицы.
 
