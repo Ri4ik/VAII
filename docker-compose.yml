@@ -16,7 +16,7 @@ services:
 
   php:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     container_name: php-app
     logging:

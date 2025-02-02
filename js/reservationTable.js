@@ -8,23 +8,27 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const reservations = await fetchData('http://localhost:8000/api/reservations.php');
             tableBody.innerHTML = ''; // Очищаем таблицу
-
-            reservations.forEach(reservation => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${reservation.id}</td>
-                    <td>${reservation.name}</td>
-                    <td>${reservation.email}</td>
-                    <td>${reservation.service}</td>
-                    <td>${reservation.date}</td>
-                    <td>${reservation.time}</td>
-                    <td>
-                        <button class="edit-btn" data-id="${reservation.id}">Upraviť</button>
-                        <button class="delete-btn" data-id="${reservation.id}">Odstrániť</button>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
+            console.log(reservations); // Посмотреть, что именно возвращает API
+            if (reservations.success && Array.isArray(reservations.reservations)) {
+                reservations.reservations.forEach(reservation => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+            <td>${reservation.id}</td>
+            <td>${reservation.name}</td>
+            <td>${reservation.email}</td>
+            <td>${reservation.service}</td>
+            <td>${reservation.date}</td>
+            <td>${reservation.time}</td>
+            <td>
+                <button class="edit-btn" data-id="${reservation.id}">Upraviť</button>
+                <button class="delete-btn" data-id="${reservation.id}">Odstrániť</button>
+            </td>
+        `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                console.error('Unexpected response:', reservations);
+            }
 
             attachEventListeners();
         } catch (error) {
